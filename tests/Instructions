@@ -1,0 +1,121 @@
+﻿PowerShell 7.5.2
+PS C:\Users\melon> cd Documents/prog/CSharp
+PS C:\Users\melon\Documents\prog\CSharp> mkdir quality
+
+    Directory: C:\Users\melon\Documents\prog\CSharp
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----          27/08/2025    09.07                quality
+
+PS C:\Users\melon\Documents\prog\CSharp> cd quality
+PS C:\Users\melon\Documents\prog\CSharp\quality> dotnet new sln
+The template "Solution File" was created successfully.
+
+PS C:\Users\melon\Documents\prog\CSharp\quality> ls
+
+    Directory: C:\Users\melon\Documents\prog\CSharp\quality
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---          27/08/2025    09.08            441 quality.sln
+
+PS C:\Users\melon\Documents\prog\CSharp\quality> git clone https://github.com/PeterMEASV/WebApiExercise
+Cloning into 'WebApiExercise'...
+remote: Enumerating objects: 118, done.
+remote: Counting objects: 100% (118/118), done.
+remote: Compressing objects: 100% (81/81), done.
+remote: Total 118 (delta 21), reused 118 (delta 21), pack-reused 0 (from 0)
+Receiving objects: 100% (118/118), 1.51 MiB | 9.25 MiB/s, done.
+Resolving deltas: 100% (21/21), done.
+PS C:\Users\melon\Documents\prog\CSharp\quality> ls
+
+    Directory: C:\Users\melon\Documents\prog\CSharp\quality
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----          27/08/2025    09.08                WebApiExercise
+-a---          27/08/2025    09.08            441 quality.sln
+
+PS C:\Users\melon\Documents\prog\CSharp\quality> mkdir tests
+
+    Directory: C:\Users\melon\Documents\prog\CSharp\quality
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----          27/08/2025    09.08                tests
+
+PS C:\Users\melon\Documents\prog\CSharp\quality> cd tests
+PS C:\Users\melon\Documents\prog\CSharp\quality\tests> dotnet new xunit3
+No templates or subcommands found matching: 'xunit3'.
+Did you mean one of the following templates?
+   dotnet new xunit
+
+To list installed templates similar to 'xunit3', run:
+   dotnet new list xunit3
+To search for the templates on NuGet.org, run:
+   dotnet new search xunit3
+
+
+For details on the exit code, refer to https://aka.ms/templating-exit-codes#103
+PS C:\Users\melon\Documents\prog\CSharp\quality\tests> dotnet new search xunit3
+Searching for the templates...
+Matches from template source: NuGet.org
+These templates matched your input: 'xunit3'
+
+Template Name                   Short Name        Language    Package Name / Owners       Trusted  Downloads
+------------------------------  ----------------  ----------  --------------------------  -------  ---------
+xUnit.net v3 Extension Project  xunit3-extension  [C#],F#,VB  xunit.v3.templates / xunit     ✓        12k
+xUnit.net v3 Test Project       xunit3            [C#],F#,VB  xunit.v3.templates / xunit     ✓        12k
+
+
+To use the template, run the following command to install the package:
+   dotnet new install [<package>...]
+Example:
+   dotnet new install xunit.v3.templates
+PS C:\Users\melon\Documents\prog\CSharp\quality\tests> dotnet new install xunit3
+The following template packages will be installed:
+   xunit3
+
+xunit3 could not be installed, the package does not exist.
+
+For details on the exit code, refer to https://aka.ms/templating-exit-codes#103
+PS C:\Users\melon\Documents\prog\CSharp\quality\tests> dotnet new install xunit.v3.templates
+The following template packages will be installed:
+   xunit.v3.templates
+
+Success: xunit.v3.templates::3.0.1 installed the following templates:
+Template Name                   Short Name        Language    Tags
+------------------------------  ----------------  ----------  ----------
+xUnit.net v3 Extension Project  xunit3-extension  [C#],F#,VB  Test/xUnit
+xUnit.net v3 Test Project       xunit3            [C#],F#,VB  Test/xUnit
+
+PS C:\Users\melon\Documents\prog\CSharp\quality\tests> cd tests
+Set-Location: Cannot find path 'C:\Users\melon\Documents\prog\CSharp\quality\tests\tests' because it does not exist.
+PS C:\Users\melon\Documents\prog\CSharp\quality\tests> dotnet new xunit3
+The template "xUnit.net v3 Test Project" was created successfully.
+
+Processing post-creation actions...
+Restoring C:\Users\melon\Documents\prog\CSharp\quality\tests\tests.csproj:
+Restore succeeded.
+
+
+PS C:\Users\melon\Documents\prog\CSharp\quality\tests> cd ..
+PS C:\Users\melon\Documents\prog\CSharp\quality> ls
+
+    Directory: C:\Users\melon\Documents\prog\CSharp\quality
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----          27/08/2025    09.11                tests
+d----          27/08/2025    09.08                WebApiExercise
+-a---          27/08/2025    09.08            441 quality.sln
+
+PS C:\Users\melon\Documents\prog\CSharp\quality> dotnet sln add WebApiExercise
+Project `WebApiExercise\WebApiExercise.csproj` added to the solution.
+PS C:\Users\melon\Documents\prog\CSharp\quality> dotnet sln add tests
+Project `tests\tests.csproj` added to the solution.
+PS C:\Users\melon\Documents\prog\CSharp\quality> rider quality.sln
+PS C:\Users\melon\Documents\prog\CSharp\quality> rider quality.sln
+PS C:\Users\melon\Documents\prog\CSharp\quality> rider quality.sln
+PS C:\Users\melon\Documents\prog\CSharp\quality>
